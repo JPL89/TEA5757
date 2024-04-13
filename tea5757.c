@@ -11,37 +11,8 @@
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-#ifndef TEA5757_H
-#define TEA5757_H
 
-#define TEA5757_EN PORTCbits.RC4
-#define TEA5757_DATA PORTCbits.RC6
-#define TEA5757_CLOCK PORTCbits.RC5
-//#define TEA5757_ST PORTCbits.RC7
-
-#define TEA5757_EN_TRIS TRISCbits.RC4
-#define TEA5757_DATA_TRIS TRISCbits.RC6
-#define TEA5757_CLOCK_TRIS TRISCbits.RC5
-//#define TEA5757_ST_TRIS TRISCbits.RC7
-
-#define TEA5757_LEVEL_0 0x00
-#define TEA5757_LEVEL_1 0x01
-#define TEA5757_LEVEL_2 0x02
-#define TEA5757_LEVEL_3 0x03
-
-#define TEA5757_PORT_18 0x04
-#define TEA5757_PORT_19 0x08
-
-#define TEA5757_BAND_FM 0x00
-#define TEA5757_BAND_MW 0x10
-#define TEA5757_BAND_LW 0x20
-#define TEA5757_BAND_SW 0x30
-
-#define TEA5757_SEARCH_DOWN 0x00
-#define TEA5757_SEARCH_UP 0x80
-
-#define TEA5757_FMIF 10700000 // 10.7 MHz
-#define TEA5757_AMIF 450000 // 450 KHz
+#include "tea5757.h"
 
 void TEA5757_Init()
 {
@@ -152,6 +123,4 @@ void TEA5757_Search(unsigned char BAND, unsigned char LEVEL, unsigned char DIREC
     
 	TEA5757_Write(data);
 }
-
-#endif
 
